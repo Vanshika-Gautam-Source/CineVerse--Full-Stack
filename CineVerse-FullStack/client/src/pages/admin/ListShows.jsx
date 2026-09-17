@@ -16,10 +16,16 @@ const ListShows = () => {
 
     const getAllShows = async () =>{
         try {
-            const { data } = await axios.get("/api/admin/all-shows", {
-                headers: { Authorization: `Bearer ${await getToken()}` }
-            });
-            setShows(data.shows)
+           setShows([{
+            movie: dummyShowsData[0],
+            showDateTime: "2026-09-30T02:30:00.000Z",
+            showPrice: 59,
+            occupiedSeats: {
+                A1: "user_1",
+                B1: "user_2",
+                C1: "user_3"
+            }
+           }]);
             setLoading(false);
         } catch (error) {
             console.error(error);

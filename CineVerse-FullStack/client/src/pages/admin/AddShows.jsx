@@ -21,15 +21,7 @@ const AddShows = () => {
 
 
      const fetchNowPlayingMovies = async () => {
-        try {
-            const { data } = await axios.get('/api/show/now-playing', {
-                headers: { Authorization: `Bearer ${await getToken()}` }})
-                if(data.success){
-                    setNowPlayingMovies(data.movies)
-                }
-        } catch (error) {
-            console.error('Error fetching movies:', error)
-        }
+        setNowPlayingMovies(dummyShowsData)
     };
 
     const handleDateTimeAdd = () => {

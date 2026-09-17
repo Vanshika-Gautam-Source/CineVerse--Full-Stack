@@ -37,6 +37,7 @@ const AdminSidebar = () => {
       </div>
     </div>
   )
-}
+ }
 
-export default AdminSidebar
+ export default AdminSidebar
+

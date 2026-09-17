@@ -15,10 +15,21 @@ const MyBookings = () => {
   const [bookings, setBookings] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
-  const getMyBookings = async () =>{
-    setBookings(dummyBookingData)
-    setIsLoading(false)
-  }
+  // const getMyBookings = async () =>{
+  //   setBookings(dummyBookingData)
+  //   setIsLoading(false)
+  // }
+  const getMyBookings = async () => {
+  const savedBookings =
+    JSON.parse(localStorage.getItem("cineverseBookings")) || [];
+
+  setBookings([
+    ...savedBookings,
+    ...dummyBookingData
+  ]);
+
+  setIsLoading(false);
+}
 
   useEffect(()=>{
     if(user){
